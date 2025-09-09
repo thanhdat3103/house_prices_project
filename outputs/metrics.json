@@ -1,0 +1,49 @@
+{
+  "regression": {
+    "LinearRegression": {
+      "MAE": 25414.725402851924,
+      "RMSE": 39763.29526578063,
+      "R2": 0.7938653966356559
+    },
+    "RandomForestRegressor": {
+      "MAE": 19180.695821102414,
+      "RMSE": 28916.334751651524,
+      "R2": 0.8909884152402685
+    }
+  },
+  "classification": {
+    "LogisticRegression": {
+      "Accuracy": 0.9246575342465754
+    },
+    "RandomForestClassifier": {
+      "Accuracy": 0.9246575342465754
+    },
+    "classification_report_RF": {
+      "0": {
+        "precision": 0.954248366013072,
+        "recall": 0.906832298136646,
+        "f1-score": 0.9299363057324841,
+        "support": 161.0
+      },
+      "1": {
+        "precision": 0.8920863309352518,
+        "recall": 0.9465648854961832,
+        "f1-score": 0.9185185185185185,
+        "support": 131.0
+      },
+      "accuracy": 0.9246575342465754,
+      "macro avg": {
+        "precision": 0.9231673484741618,
+        "recall": 0.9266985918164146,
+        "f1-score": 0.9242274121255013,
+        "support": 292.0
+      },
+      "weighted avg": {
+        "precision": 0.9263606037007621,
+        "recall": 0.9246575342465754,
+        "f1-score": 0.9248139422906022,
+        "support": 292.0
+      }
+    }
+  }
+}
