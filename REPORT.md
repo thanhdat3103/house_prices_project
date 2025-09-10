@@ -5,46 +5,46 @@
 
 ---
 
-## 1. Problem Identification
+## 1. Problem Identification:
 
-**Real-world problem.** Estimate the market value of a house using property attributes
-**Tasks.**
+**Real-world problem:** Estimate the market value of a house using property attributes
+**Tasks:**
 - **Regression (primary):** Predict the continuous sale price `SalePrice` (USD)
 - **Classification (secondary):** Predict whether a home’s `SalePrice` is **above** the dataset median or **at/below** it
 
-**Selected features (simple, numeric-only baseline)**
+**Selected features:**
 - `OverallQual` (overall material/finish quality)
 - `GrLivArea` (above-ground living area, sq ft)
 - `GarageCars` (garage capacity, cars)
 - `TotalBsmtSF` (basement area, sq ft)
 - `YearBuilt` (year built)
 
-**Rationale.** These features capture quality, size, amenities, and age—key drivers of house prices—and let us build a clean numeric baseline without one-hot encoding
+**Rationale:** These features capture quality, size, amenities, and age. These are key drivers of house prices
 
 ---
 
 ## 2. Data Collection
 
-**Source.** Kaggle — *House Prices: Advanced Regression Techniques* (train set)
-**Scope.** Original dataset: 1,460 rows × 81 columns. This project uses a compact, numeric subset for clarity
-**File.** `train.csv` placed in the project root
+**Source:** Kaggle — *House Prices: Advanced Regression Techniques* (train set)
+**Scope:** Original dataset: 1,460 rows × 81 columns. This project uses a compact, numeric subset for clarity
+**File:** `train.csv` placed in the project root
 
-**Basic preparation.**
+**Basic preparation:**
 - Keep numeric features only
 - Handle missing numeric values by filling with `0` 
 - Create a binary label for classification: `price_high = 1` if `SalePrice > median(SalePrice)`, else `0`
 
-**Train/test split.** 80/20 with `random_state=42` for reproducibility
+**Train/test split:** 80/20 with `random_state=42` for reproducibility
 
 ---
 
 ## 3. Methods
 
-**Models (scikit-learn).**
+**Models (scikit-learn):**
 - **Regression:** `LinearRegression`, `RandomForestRegressor`
 - **Classification:** `LogisticRegression`, `RandomForestClassifier`
 
-**Implementation.** See `src/house_prices_ml.py`. Running the script produces:
+**Implementation:** See `src/house_prices_ml.py`. Running the script produces:
 - Metrics: `outputs/metrics.json`
 - Figures: `outputs/regression_pred_vs_actual.png`, `outputs/classification_confusion_matrix.png`
 
@@ -58,7 +58,7 @@
 | LinearRegression       | 25,414.73 | 39,763.30 | 0.7939 |
 | RandomForestRegressor  | **19,180.70** | **28,916.33** | **0.8910** |
 
-**Interpretation.** RandomForestRegressor reduces both MAE and RMSE and improves R² compared to LinearRegression. This suggests important nonlinear relationships and interactions (e.g., quality × size) that a linear model cannot fully capture. The predicted-vs-actual scatter (`regression_pred_vs_actual.png`) clusters more tightly around the diagonal for RandomForest, indicating better fit across price ranges
+**Interpretation:** RandomForestRegressor reduces both MAE and RMSE and improves R² compared to LinearRegression. This suggests important nonlinear relationships and interactions (e.g., quality × size) that a linear model cannot fully capture. The predicted-vs-actual scatter (`regression_pred_vs_actual.png`) clusters more tightly around the diagonal for RandomForest, indicating better fit across price ranges
 
 ---
 
@@ -76,7 +76,7 @@
 - **Macro avg:** precision 0.9232, recall 0.9267, f1 0.9242 (support 292)  
 - **Accuracy:** 0.9247
 
-**Interpretation.** Both classifiers achieve strong and identical accuracy. RF shows balanced performance across both classes, with slightly higher recall on the “> median” class (fewer missed high-price homes). The confusion matrix figure (`classification_confusion_matrix.png`) confirms relatively symmetric errors with no severe class imbalance
+**Interpretation:** Both classifiers achieve strong and identical accuracy. RF shows balanced performance across both classes, with slightly higher recall on the “> median” class (fewer missed high-price homes). The confusion matrix figure (`classification_confusion_matrix.png`) confirms relatively symmetric errors with no severe class imbalance
 
 ---
 
@@ -146,7 +146,8 @@ Using a compact numeric subset of features, RandomForestRegressor substantially 
 **Classification (test set).**
 - LogisticRegression — Accuracy **0.9247**
 - RandomForestClassifier — Accuracy **0.9247**
-- RF classification report — class 0: precision **0.9542**, recall **0.9068**, f1 **0.9299** (support **161**);  
+- RF classification report  
+  class 0: precision **0.9542**, recall **0.9068**, f1 **0.9299** (support **161**);  
   class 1: precision **0.8921**, recall **0.9466**, f1 **0.9185** (support **131**);  
   macro avg: precision **0.9232**, recall **0.9267**, f1 **0.9242** (support **292**)
 
