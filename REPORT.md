@@ -7,7 +7,7 @@
 
 ## 1. Problem Identification:
 
-**Real-world problem:** Estimate the market value of a house using property attributes
+**Real-world problem:** Estimate the market value of a house using property attributes  
 **Tasks:**
 - **Regression (primary):** Predict the continuous sale price `SalePrice` (USD)
 - **Classification (secondary):** Predict whether a home’s `SalePrice` is **above** the dataset median or **at/below** it
