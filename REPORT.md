@@ -82,18 +82,18 @@
 
 ## 5. Discussion
 
-**Why RandomForest outperforms LinearRegression for regression?**  
-- Captures nonlinearities and interactions without manual feature engineering
-- Handles skew and outliers more robustly than a purely linear model
-- Naturally averages many trees, reducing variance on complex patterns
+**Why does RandomForest beat LinearRegression for regression?**  
+- LinearRegression tries to fit a **straight line**; house prices aren’t that simple. RandomForest can learn **curvy patterns and interactions** (e.g., size × quality) without you hand-building extra features.  
+- It deals **better with skewed data and outliers**.  
+- It **averages many decision trees**, so predictions are more stable (lower variance).
 
-**Logistic vs. RandomForest for classification.**  
-- Logistic Regression provides a simple linear decision boundary and strong baseline
-- RandomForest can model nonlinear splits; here, both models reach ~0.925 accuracy, indicating the chosen numeric features already separate the classes well
+**Logistic vs. RandomForest for classification**  
+- Logistic Regression draws **one straight boundary** between the two classes—great simple baseline.  
+- RandomForest can draw **flexible, non-linear boundaries**. In our setup, both reach ~0.925 accuracy, meaning these numeric features already separate the classes pretty well.
 
-**Model suitability.**  
-- For **precise price estimation**, **RandomForestRegressor** is preferable at this baseline
-- For **binary price bracketing**, both classifiers are suitable; use RandomForest if you expect nonlinear boundaries or want feature importance insights
+**Which model should you use?**  
+- For **accurate price estimates**, go with **RandomForestRegressor**.  
+- For a simple **above/below median** decision, **either** works; choose **RandomForestClassifier** if you expect non-linear splits or want **feature importance** insights.
 
 ---
 
