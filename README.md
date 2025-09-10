@@ -1,6 +1,6 @@
 # House Prices (CS4680 – Assignment 1)
 
-A simple starter project to predict **house prices** with two approaches:
+A project to predict **house prices** with two approaches:
 - **Regression**: predict the actual sale price (`SalePrice`)
 - **Classification**: predict whether a house is **above** or **below** the median price
 
