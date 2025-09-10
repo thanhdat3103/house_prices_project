@@ -25,8 +25,8 @@
 
 ## 2. Data Collection
 
-**Source:** Kaggle — *House Prices: Advanced Regression Techniques* (train set)
-**Scope:** Original dataset: 1,460 rows × 81 columns. This project uses a compact, numeric subset for clarity
+**Source:** Kaggle — *House Prices: Advanced Regression Techniques* (train set)  
+**Scope:** Original dataset: 1,460 rows × 81 columns. This project uses a compact, numeric subset for clarity  
 **File:** `train.csv` placed in the project root
 
 **Basic preparation:**
