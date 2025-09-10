@@ -1,46 +1,69 @@
-1. House Prices (CS4680 – Assignment 1)
+# House Prices (CS4680 – Assignment 1)
 
-This repo is a simple starter to predict house prices. It shows two things:
+A simple starter project to predict **house prices** with two approaches:
+- **Regression**: predict the actual sale price (`SalePrice`).
+- **Classification**: predict whether a house is **above** or **below** the median price.
 
- - Regression: predict the actual sale price.
+Dataset: Kaggle — *House Prices: Advanced Regression Techniques*.
 
- - Classification: predict if a house is above or below the median price.
+---
 
-We use the Kaggle House Prices dataset.
-
-2. Structure
+## 1) Project Structure
+```
 .
 ├── requirements.txt
-├── train.csv   
-├── README.md                  # this file
-├── REPORT.md                  # report outline—add your own comments/conclusions
+├── train.csv
+├── README.md
+├── REPORT.md
 ├── src
-│   └── house_prices_ml.py     # main script (well-commented)
+│   └── house_prices_ml.py
 └── outputs
-    ├── metrics.json                   # model metrics
-    ├── regression_pred_vs_actual.png  # predicted vs. actual (regression)
-    └── classification_confusion_matrix.png  # confusion matrix (classification)
+    ├── metrics.json
+    ├── regression_pred_vs_actual.png
+    └── classification_confusion_matrix.png
+```
+- `src/house_prices_ml.py`: main script.
+- `REPORT.md`: report outline—add comments and conclusions.
+- `outputs/`: generated after running the script.
 
+---
 
-3. Data
-- Download train.csv from Kaggle : House Prices - Advanced Regression Techniques
-  URL : https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques
-- Put train.csv in the project root (same folder as src/).
+## 2) Data
+1) Download `train.csv` from Kaggle:  
+   https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques  
+2) Place `train.csv` in the **project root** (same folder as `src/`).
 
-4. Requirements
+---
+
+## 3) Requirements
 - Python 3.10+
-- Libraries : pandas, numpy, scikit-learn, matplotlib
-- Install with: pip install -r requirements.txt
+- Libraries: `pandas`, `numpy`, `scikit-learn`, `matplotlib`
 
+Install:
+```bash
+pip install -r requirements.txt
+```
+(or)
+```bash
+pip install pandas numpy scikit-learn matplotlib
+```
+---
 
-5. How to run:
+## 4) How to Run
+From the **project root**:
+```bash
 python src/house_prices_ml.py --data train.csv
+```
 
-The script will:
-- Train LinearRegression and RandomForestRegressor (regression)
+What the script does:
+- Trains **LinearRegression** and **RandomForestRegressor** (regression).
+- Trains **LogisticRegression** and **RandomForestClassifier** (classification using a median-price threshold).
+- Saves metrics to `outputs/metrics.json`.
+- Saves plots to `outputs/*.png`.
 
-- Train LogisticRegression and RandomForestClassifier (classification using a median-price threshold)
+---
 
-- Save metrics to outputs/metrics.json
-
-- Save plots to outputs/*.png
+## 5) Outputs
+- `outputs/metrics.json`: MAE, RMSE, R² (regression) and accuracy + classification report (classification).
+- `outputs/regression_pred_vs_actual.png`: scatter of **predicted vs. actual** for the best regressor.
+- `outputs/classification_confusion_matrix.png`: **confusion matrix** for the best classifier.
