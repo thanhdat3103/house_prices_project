@@ -1,10 +1,10 @@
 # House Prices (CS4680 – Assignment 1)
 
 A simple starter project to predict **house prices** with two approaches:
-- **Regression**: predict the actual sale price (`SalePrice`).
-- **Classification**: predict whether a house is **above** or **below** the median price.
+- **Regression**: predict the actual sale price (`SalePrice`)
+- **Classification**: predict whether a house is **above** or **below** the median price
 
-Dataset: Kaggle — *House Prices: Advanced Regression Techniques*.
+Dataset: Kaggle — *House Prices: Advanced Regression Techniques*
 
 ---
 
@@ -22,16 +22,16 @@ Dataset: Kaggle — *House Prices: Advanced Regression Techniques*.
     ├── regression_pred_vs_actual.png
     └── classification_confusion_matrix.png
 ```
-- `src/house_prices_ml.py`: main script.
-- `REPORT.md`: report outline—add comments and conclusions.
-- `outputs/`: generated after running the script.
+- `src/house_prices_ml.py`: main script
+- `REPORT.md`: report outline
+- `outputs/`: generated after running the script
 
 ---
 
 ## 2) Data
 1) Download `train.csv` from Kaggle:  
    https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques  
-2) Place `train.csv` in the **project root** (same folder as `src/`).
+2) Place `train.csv` in the **project root** (same folder as `src/`)
 
 ---
 
@@ -56,14 +56,14 @@ python src/house_prices_ml.py --data train.csv
 ```
 
 What the script does:
-- Trains **LinearRegression** and **RandomForestRegressor** (regression).
-- Trains **LogisticRegression** and **RandomForestClassifier** (classification using a median-price threshold).
-- Saves metrics to `outputs/metrics.json`.
-- Saves plots to `outputs/*.png`.
+- Trains **LinearRegression** and **RandomForestRegressor** (regression)
+- Trains **LogisticRegression** and **RandomForestClassifier** (classification using a median-price threshold)
+- Saves metrics to `outputs/metrics.json`
+- Saves plots to `outputs/*.png`
 
 ---
 
 ## 5) Outputs
-- `outputs/metrics.json`: MAE, RMSE, R² (regression) and accuracy + classification report (classification).
-- `outputs/regression_pred_vs_actual.png`: scatter of **predicted vs. actual** for the best regressor.
-- `outputs/classification_confusion_matrix.png`: **confusion matrix** for the best classifier.
+- `outputs/metrics.json`: MAE, RMSE, R² (regression) and accuracy + classification report (classification)
+- `outputs/regression_pred_vs_actual.png`: scatter of **predicted vs. actual** for the best regressor
+- `outputs/classification_confusion_matrix.png`: **confusion matrix** for the best classifier
